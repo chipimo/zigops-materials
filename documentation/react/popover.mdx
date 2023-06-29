@@ -1,0 +1,903 @@
+---
+title: Tailwind CSS Popover for React - ZigOps Material
+description: Customise your web projects with our easy-to-use popover component for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "popover",
+    "popover-placement",
+    "custom-popover-animation",
+    "subscription-popover",
+    "contact-popover",
+    "popover-with-image",
+    "profile-info-popover",
+    "popover-with-description",
+    "props",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/popover",
+      description: "Learn more about props definition and types of popover components.",
+    },
+    {
+      title: "Theme",
+      route: "theme/popover",
+      description: "Learn how to customize the theme and styles for popover components.",
+    },
+  ]
+github: checkbox
+prev: navbar
+next: progress-bar
+---
+
+# Tailwind CSS Popover - React
+
+Our <Code>Popover</Code> component for Tailwind CSS & React is a small overlay of content that is used to demonstrate secondary information of any component when a user clicks it.
+
+See below our simple <Code>Popover</Code> example that you can use in your web project.
+
+<br />
+
+<CodePreview id="popover" link="popover#popover" component={
+  <Popover>
+    <PopoverHandler>
+      <Button>Show Popover</Button>
+    </PopoverHandler>
+    <PopoverContent>
+      <span>This is a very beautiful popover, show some love.</span>
+    </PopoverContent>
+  </Popover>
+}>
+```jsx
+import {
+  Popover,
+  PopoverHandler,
+  PopoverContent,
+  Button,
+} from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <Popover>
+      <PopoverHandler>
+        <Button>Show Popover</Button>
+      </PopoverHandler>
+      <PopoverContent>
+        This is a very beautiful popover, show some love.
+      </PopoverContent>
+    </Popover>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Popover Placement
+
+You can change the position of the <Code>Popover</Code> component using the <Code>placement</Code> prop.
+
+<CodePreview id="popover-placement" link="popover#popover-placement" component={
+  <>
+    <div className="mb-3 flex gap-3">
+      <Popover placement="top">
+        <PopoverHandler>
+          <Button>Top</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+      <Popover placement="top-start">
+        <PopoverHandler>
+          <Button>Top Start</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+      <Popover placement="top-end">
+        <PopoverHandler>
+          <Button>Top End</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+    </div>
+    <div className="mb-3 flex gap-3">
+      <Popover placement="right">
+        <PopoverHandler>
+          <Button>Right</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+      <Popover placement="right-start">
+        <PopoverHandler>
+          <Button>Right Start</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+      <Popover placement="right-end">
+        <PopoverHandler>
+          <Button>Right End</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+    </div>
+    <div className="mb-3 flex gap-3">
+      <Popover placement="bottom">
+        <PopoverHandler>
+          <Button>Bottom</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+      <Popover placement="bottom-start">
+        <PopoverHandler>
+          <Button>Bottom Start</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+      <Popover placement="bottom-end">
+        <PopoverHandler>
+          <Button>Bottom End</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+    </div>
+    <div className="flex gap-3">
+      <Popover placement="left">
+        <PopoverHandler>
+          <Button>Left</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+      <Popover placement="left-start">
+        <PopoverHandler>
+          <Button>Left Start</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+      <Popover placement="left-end">
+        <PopoverHandler>
+          <Button>Left End</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+    </div>
+  </>
+}>
+```jsx
+import { Fragment } from "react";
+import {
+  Popover,
+  PopoverHandler,
+  PopoverContent,
+  Button,
+} from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <Fragment>
+      <div className="mb-3 flex gap-3">
+        <Popover placement="top">
+          <PopoverHandler>
+            <Button>Top</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+        <Popover placement="top-start">
+          <PopoverHandler>
+            <Button>Top Start</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+        <Popover placement="top-end">
+          <PopoverHandler>
+            <Button>Top End</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+      </div>
+      <div className="mb-3 flex gap-3">
+        <Popover placement="right">
+          <PopoverHandler>
+            <Button>Right</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+        <Popover placement="right-start">
+          <PopoverHandler>
+            <Button>Right Start</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+        <Popover placement="right-end">
+          <PopoverHandler>
+            <Button>Right End</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+      </div>
+      <div className="mb-3 flex gap-3">
+        <Popover placement="bottom">
+          <PopoverHandler>
+            <Button>Bottom</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+        <Popover placement="bottom-start">
+          <PopoverHandler>
+            <Button>Bottom Start</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+        <Popover placement="bottom-end">
+          <PopoverHandler>
+            <Button>Bottom End</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+      </div>
+      <div className="flex gap-3">
+        <Popover placement="left">
+          <PopoverHandler>
+            <Button>Left</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+        <Popover placement="left-start">
+          <PopoverHandler>
+            <Button>Left Start</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+        <Popover placement="left-end">
+          <PopoverHandler>
+            <Button>Left End</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+      </div>
+    </Fragment>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Custom Popover Animation
+
+You can modify the open/close state animation for <Code>Popover</Code> component using the <Code>animate</Code> prop.
+
+<CodePreview id="custom-popover-animation" link="popover#custom-popover-animation" component={
+  <Popover
+    animate={{
+      mount: { scale: 1, y: 0 },
+      unmount: { scale: 0, y: 25 },
+    }}
+  >
+    <PopoverHandler>
+      <Button>Show Popover</Button>
+    </PopoverHandler>
+    <PopoverContent>
+      <span>This is a very beautiful popover, show some love.</span>
+    </PopoverContent>
+  </Popover>
+}>
+```jsx
+import {
+  Popover,
+  PopoverHandler,
+  PopoverContent,
+  Button,
+} from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <Popover
+      animate={{
+        mount: { scale: 1, y: 0 },
+        unmount: { scale: 0, y: 25 },
+      }}
+    >
+      <PopoverHandler>
+        <Button>Show Popover</Button>
+      </PopoverHandler>
+      <PopoverContent>
+        This is a very beautiful popover, show some love.
+      </PopoverContent>
+    </Popover>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Subscription Popover
+
+Use this beautiful popover if you want to let the users subscribe easily.
+
+<CodePreview id="subscription-popover" component={
+  <Popover placement="bottom">
+    <PopoverHandler>
+      <Button>Subscribe</Button>
+    </PopoverHandler>
+    <PopoverContent className="w-96">
+      <Typography
+        variant="h6"
+        color="blue-gray"
+        className="mb-6"
+      >
+        Newsletter Subscription
+      </Typography>
+      <div className="flex gap-2">
+        <Input label="Email Address" />
+        <Button variant="gradient">Subscribe</Button>
+      </div>
+    </PopoverContent>
+  </Popover>
+}>
+```jsx
+<Popover placement="bottom">
+  <PopoverHandler>
+    <Button>Subscribe</Button>
+  </PopoverHandler>
+  <PopoverContent className="w-96">
+    <Typography
+      variant="h6"
+      color="blue-gray"
+      className="mb-6"
+    >
+      Newsletter Subscription
+    </Typography>
+    <div className="flex gap-2">
+      <Input label="Email Address" />
+      <Button variant="gradient">Subscribe</Button>
+    </div>
+  </PopoverContent>
+</Popover>
+```
+</CodePreview>
+
+---
+
+## Contact Popover
+
+Use this example of  a popover component to help users get the help they need easier.
+
+<CodePreview id="contact-popover" component={
+  <Popover placement="bottom">
+    <PopoverHandler>
+      <Button>Contact Us</Button>
+    </PopoverHandler>
+    <PopoverContent className="w-72">
+      <div className="flex items-center gap-4 border-b border-blue-gray-50 pb-4 mb-4">
+        <Avatar src="/img/team-4.jpg" alt="candice wu" />
+        <div>
+          <Typography variant="h6" color="blue-gray">Candice Wu</Typography>
+          <Typography variant="small" color="gray" className="font-normal">General Manager</Typography>
+        </div>
+      </div>
+      <List className="p-0">
+        <a href="#" className="text-initial">
+          <ListItem>
+            <ListItemPrefix>
+              <SolidIcons.BuildingOffice2Icon className="w-5 h-5" />
+            </ListItemPrefix>
+            ABC Construction
+          </ListItem>
+        </a>
+        <a href="#" className="text-initial">
+          <ListItem>
+            <ListItemPrefix>
+              <SolidIcons.PhoneIcon className="w-5 h-5" />
+            </ListItemPrefix>
+            00 123 456 789
+          </ListItem>
+        </a>
+        <a href="#" className="text-initial">
+          <ListItem>
+            <ListItemPrefix>
+              <SolidIcons.EnvelopeIcon className="w-5 h-5" />
+            </ListItemPrefix>
+            person@example.com
+          </ListItem>
+        </a>
+      </List>
+    </PopoverContent>
+  </Popover>
+}>
+```jsx
+import React from "react";
+import {
+  Popover,
+  PopoverHandler,
+  PopoverContent,
+  Avatar,
+  Button,
+  Typography,
+  List,
+  ListItem,
+  ListItemPrefix
+} from "@zigops-material/react";
+import {
+  BuildingOffice2Icon,
+  PhoneIcon,
+  EnvelopeIcon
+} from "@heroicons/react/24/solid";
+
+export default function Example() {
+  return (
+    <Popover placement="bottom">
+      <PopoverHandler>
+        <Button>Contact Us</Button>
+      </PopoverHandler>
+      <PopoverContent className="w-72">
+        <div className="flex items-center gap-4 border-b border-blue-gray-50 pb-4 mb-4">
+          <Avatar src="/img/team-4.jpg" alt="candice wu" />
+          <div>
+            <Typography variant="h6" color="blue-gray">Candice Wu</Typography>
+            <Typography variant="small" color="gray" className="font-normal">General Manager</Typography>
+          </div>
+        </div>
+        <List className="p-0">
+          <a href="#" className="text-initial">
+            <ListItem>
+              <ListItemPrefix>
+                <SolidIcons.BuildingOffice2Icon className="w-5 h-5" />
+              </ListItemPrefix>
+              ABC Construction
+            </ListItem>
+          </a>
+          <a href="#" className="text-initial">
+            <ListItem>
+              <ListItemPrefix>
+                <SolidIcons.PhoneIcon className="w-5 h-5" />
+              </ListItemPrefix>
+              00 123 456 789
+            </ListItem>
+          </a>
+          <a href="#" className="text-initial">
+            <ListItem>
+              <ListItemPrefix>
+                <SolidIcons.EnvelopeIcon className="w-5 h-5" />
+              </ListItemPrefix>
+              person@example.com
+            </ListItem>
+          </a>
+        </List>
+      </PopoverContent>
+    </Popover>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Popover with Image
+
+This example is used to show more information. It contains an image, headline, description, and link.
+
+<CodePreview id="popover-with-image" component={
+  <Popover>
+    <PopoverHandler>
+      <Button>More Info</Button>
+    </PopoverHandler>
+    <PopoverContent className="w-[28rem] p-0 overflow-hidden flex z-[999]">
+      <div className="p-4">
+        <Typography color="blue-gray" className="font-medium mb-2">ZigOps Material</Typography>
+        <Typography variant="small" color="gray" className="font-normal mb-4">
+          ZigOps Material is an easy to use components library for Tailwind CSS and Material Design. It features multiple React and HTML components, all written with Tailwind CSS classes and Material Design guidelines.
+        </Typography>
+        <a href="#" className="inline-block">
+          <Button size="sm" variant="text" className="flex items-center gap-1 capitalize">
+            Read More 
+            <OutlineIcons.ArrowLongRightIcon strokeWidth={2} className="w-3.5 h-3.5" />
+          </Button>
+        </a>
+      </div>
+      <img 
+        src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dGVhbSUyMGJ1aWxkaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+        alt="image"
+        className="w-1/2 h-full object-cover"
+      />
+    </PopoverContent>
+  </Popover>
+}>
+```jsx
+import {
+  Popover,
+  PopoverHandler,
+  PopoverContent,
+  Button,
+  Typography,
+} from "@zigops-material/react";
+import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
+
+export default function Example() {
+  return (
+    <Popover>
+      <PopoverHandler>
+        <Button>More Info</Button>
+      </PopoverHandler>
+      <PopoverContent className="w-[28rem] p-0 overflow-hidden flex z-[999]">
+        <div className="p-4">
+          <Typography color="blue-gray" className="font-medium mb-2">ZigOps Material</Typography>
+          <Typography variant="small" color="gray" className="font-normal mb-4">
+            ZigOps Material is an easy to use components library for Tailwind CSS and Material Design. It features multiple React and HTML components, all written with Tailwind CSS classes and Material Design guidelines.
+          </Typography>
+          <a href="#" className="inline-block">
+            <Button size="sm" variant="text" className="flex items-center gap-1 capitalize">
+              Read More 
+              <ArrowLongRightIcon strokeWidth={2} className="w-3.5 h-3.5" />
+            </Button>
+          </a>
+        </div>
+        <img 
+          src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dGVhbSUyMGJ1aWxkaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+          alt="image"
+          className="w-1/2 h-full object-cover"
+        />
+      </PopoverContent>
+    </Popover>
+  )
+}
+```
+</CodePreview>
+
+---
+
+## Profile Info Popover
+
+Use this example to help the user find out more information about a profile.
+
+<CodePreview id="profile-info-popover" link="popover#profile-info-popover" component={
+  <State initialState={{ open: false }}>
+    <Observe>
+      {({ setState, open }) => (
+        <Popover open={open} handler={setState}>
+          <PopoverHandler
+            onMouseEnter={() => setState((s) => ({ open: true }))}
+            onMouseLeave={() => setState((s) => ({ open: false }))}
+          >
+            <Button variant="text">Profile Info</Button>
+          </PopoverHandler>
+          <PopoverContent
+            className="max-w-[24rem]"
+            onMouseEnter={() => setState((s) => ({ open: true }))}
+            onMouseLeave={() => setState((s) => ({ open: false }))}
+          >
+            <div className="mb-2 flex items-center justify-between gap-4">
+              <Avatar
+                size="md"
+                variant="circular"
+                src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+                alt="candice wu"
+              />
+              <Button
+                variant="gradient"
+                color="blue"
+                size="sm"
+                className="font-medium capitalize"
+              >
+                Follow
+              </Button>
+            </div>
+            <Typography
+              variant="h6"
+              color="blue-gray"
+              className="mb-2 flex items-center gap-2 font-medium"
+            >
+              <span>Candice Wu</span> •{" "}
+              <a href="#" className="text-sm text-blue-gray-700">
+                @canwu
+              </a>
+            </Typography>
+            <Typography variant="small" color="gray" className="font-normal">
+              Frontend Developer • Major interest in Web Development: motivated to
+              achieve measurable results, to deepen my knowledge and improve my
+              skills.
+            </Typography>
+            <div className="mt-6 flex items-center gap-8 border-t border-blue-gray-50 pt-4">
+              <Typography
+                variant="small"
+                color="gray"
+                className="flex items-center gap-1 text-xs font-normal"
+              >
+                <OutlineIcons.MapPinIcon strokeWidth={2} className="-mt-0.5 h-3.5 w-3.5" />
+                United Kingdom
+              </Typography>
+              <Typography
+                as="a"
+                href="#"
+                variant="small"
+                color="gray"
+                className="flex items-center gap-1 text-xs font-normal"
+              >
+                <OutlineIcons.BuildingOffice2Icon
+                  strokeWidth={2}
+                  className="-mt-0.5 h-3.5 w-3.5"
+                />
+                ZigOps Material
+              </Typography>
+            </div>
+          </PopoverContent>
+        </Popover>
+      )}
+    </Observe>
+  </State>
+}>
+```jsx
+import React from "react";
+import {
+  Popover,
+  PopoverHandler,
+  PopoverContent,
+  Button,
+  Avatar,
+  Typography,
+} from "@zigops-material/react";
+import { MapPinIcon, BuildingOffice2Icon } from "@heroicons/react/24/outline";
+
+export default function Example() {
+  const [openPopover, setOpenPopover] = React.useState(false);
+  const triggers = {
+    onMouseEnter: () => setOpenPopover(true),
+    onMouseLeave: () => setOpenPopover(false),
+  };
+
+  return (
+    <Popover open={openPopover} handler={setOpenPopover}>
+      <PopoverHandler {...triggers}>
+        <Button variant="text">Profile Info</Button>
+      </PopoverHandler>
+      <PopoverContent {...triggers} className="max-w-[24rem]">
+        <div className="mb-2 flex items-center justify-between gap-4">
+          <Avatar
+            size="md"
+            variant="circular"
+            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+            alt="candice wu"
+          />
+          <Button
+            variant="gradient"
+            color="blue"
+            size="sm"
+            className="font-medium capitalize"
+          >
+            Follow
+          </Button>
+        </div>
+        <Typography
+          variant="h6"
+          color="blue-gray"
+          className="mb-2 flex items-center gap-2 font-medium"
+        >
+          <span>Candice Wu</span> •{" "}
+          <a href="#" className="text-sm text-blue-gray-700">
+            @canwu
+          </a>
+        </Typography>
+        <Typography variant="small" color="gray" className="font-normal">
+          Frontend Developer • Major interest in Web Development: motivated to
+          achieve measurable results, to deepen my knowledge and improve my
+          skills.
+        </Typography>
+        <div className="mt-6 flex items-center gap-8 border-t border-blue-gray-50 pt-4">
+          <Typography
+            variant="small"
+            color="gray"
+            className="flex items-center gap-1 text-xs font-normal"
+          >
+            <MapPinIcon strokeWidth={2} className="-mt-0.5 h-3.5 w-3.5" />
+            United Kingdom
+          </Typography>
+          <Typography
+            as="a"
+            href="#"
+            variant="small"
+            color="gray"
+            className="flex items-center gap-1 text-xs font-normal"
+          >
+            <BuildingOffice2Icon
+              strokeWidth={2}
+              className="-mt-0.5 h-3.5 w-3.5"
+            />
+            ZigOps Material
+          </Typography>
+        </div>
+      </PopoverContent>
+    </Popover>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Popover with Description
+
+<CodePreview id="popover-with-description" link="popover#popover-with-description" className="mt-4" component={
+  <State initialState={{ open: false }}>
+    <Observe>
+      {({ setState, open }) => (
+        <Popover open={open} handler={setState}>
+          <PopoverHandler
+            onMouseEnter={() => setState((s) => ({ open: true }))}
+            onMouseLeave={() => setState((s) => ({ open: false }))}
+          >
+            <Button>Repository Details</Button>
+          </PopoverHandler>
+          <PopoverContent
+            className="max-w-[26rem]"
+            onMouseEnter={() => setState((s) => ({ open: true }))}
+            onMouseLeave={() => setState((s) => ({ open: false }))}
+          >
+            <div className="mb-2 flex items-center gap-3">
+              <Typography
+                as="a"
+                href="#"
+                variant="h6"
+                color="blue-gray"
+                className="font-medium transition-colors hover:text-blue-500"
+              >
+                @zigops-material
+              </Typography>
+              <Chip
+                value="Public"
+                color="blue"
+                className="rounded-full py-1 px-2 font-medium capitalize tracking-wide"
+              />
+            </div>
+            <Typography variant="small" color="gray" className="font-normal">
+              @zigops-material is an easy-to-use components library for Tailwind
+              CSS and Material Design.
+            </Typography>
+            <div className="mt-4 flex items-center gap-5">
+              <div className="flex items-center gap-1">
+                <span className="h-3 w-3 rounded-full bg-blue-700" />
+                <Typography color="gray" className="text-xs font-normal">
+                  TypeScript
+                </Typography>
+              </div>
+              <div className="flex items-center gap-1">
+                <SolidIcons.StarIcon className="-mt-0.5 h-4 w-4 text-yellow-700" />
+                <Typography color="gray" className="text-xs font-normal">
+                  1,480
+                </Typography>
+              </div>
+              <div className="flex items-center gap-1">
+                <SolidIcons.CheckBadgeIcon className="-mt-px h-4 w-4 text-green-500" />
+                <Typography color="gray" className="text-xs font-normal">
+                  Veritied
+                </Typography>
+              </div>
+            </div>
+          </PopoverContent>
+        </Popover>
+      )}
+    </Observe>
+  </State>
+}>
+```jsx
+import React from "react";
+import {
+  Popover,
+  PopoverHandler,
+  PopoverContent,
+  Button,
+  Chip,
+  Typography,
+} from "@zigops-material/react";
+import { StarIcon, CheckBadgeIcon } from "@heroicons/react/24/solid";
+
+export default function Example() {
+  const [openPopover, setOpenPopover] = React.useState(false);
+  const triggers = {
+    onMouseEnter: () => setOpenPopover(true),
+    onMouseLeave: () => setOpenPopover(false),
+  };
+
+  return (
+    <Popover open={openPopover} handler={setOpenPopover}>
+      <PopoverHandler {...triggers}>
+        <Button>Repository Details</Button>
+      </PopoverHandler>
+      <PopoverContent {...triggers} className="max-w-[26rem]">
+        <div className="mb-2 flex items-center gap-3">
+          <Typography
+            as="a"
+            href="#"
+            variant="h6"
+            color="blue-gray"
+            className="font-medium transition-colors hover:text-blue-500"
+          >
+            @zigops-material
+          </Typography>
+          <Chip
+            value="Public"
+            color="blue"
+            className="rounded-full py-1 px-2 font-medium capitalize tracking-wide"
+          />
+        </div>
+        <Typography variant="small" color="gray" className="font-normal">
+          @zigops-material is an easy-to-use components library for Tailwind
+          CSS and Material Design.
+        </Typography>
+        <div className="mt-4 flex items-center gap-5">
+          <div className="flex items-center gap-1">
+            <span className="h-3 w-3 rounded-full bg-blue-700" />
+            <Typography color="gray" className="text-xs font-normal">
+              TypeScript
+            </Typography>
+          </div>
+          <div className="flex items-center gap-1">
+            <StarIcon className="-mt-0.5 h-4 w-4 text-yellow-700" />
+            <Typography color="gray" className="text-xs font-normal">
+              1,480
+            </Typography>
+          </div>
+          <div className="flex items-center gap-1">
+            <CheckBadgeIcon className="-mt-px h-4 w-4 text-green-500" />
+            <Typography color="gray" className="text-xs font-normal">
+              Veritied
+            </Typography>
+          </div>
+        </div>
+      </PopoverContent>
+    </Popover>
+  );
+}
+```
+</CodePreview>
+
+<span id="props" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

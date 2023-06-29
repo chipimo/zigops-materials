@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.zigops-material.com
+
+# Sitemaps
+Sitemap: https://www.zigops-material.com/sitemap.xml

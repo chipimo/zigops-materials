@@ -1,0 +1,188 @@
+---
+title: Next.JS - Installation Guide
+description: Learn how to use ZigOps Material components with Next.js and Tailwind CSS to easily create elegant and flexible pages.
+navigation:
+  [
+    "installation",
+    "npm",
+    "yarn",
+    "pnpm",
+    "tailwindcss-config",
+    "with-server-components",
+    "with-monorepo",
+    "theme-provider",
+    "example",
+  ]
+github: guide/next
+prev: installation
+next: license
+---
+
+# ZigOps Material with Next.js
+
+<span id="installation" className="scroll-mt-48" />
+Learn how to setup and install @zigops-material/react with Next.js.
+
+<br />
+<br />
+
+First you need to create a new project using next.js, for more details check the <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://nextjs.org/docs/getting-started?ref=zigops-material">Next.JS Official Documentation</a>
+
+```bash
+npx create-next-app@latest
+```
+
+<br />
+
+Then you need to install Tailwind CSS since @zigops-material/react is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project.
+Check <a href="https://tailwindcss.com/docs/guides/nextjs?ref=zigops-material" target="_blank" className="font-medium hover:text-blue-500 transition-colors">Tailwind CSS Installation</a> for next.js on Tailwind CSS Documentation.
+
+---
+
+## Using NPM
+
+Install @zigops-material/react as a dependency using NPM by running the following command:
+
+<span id="npm" className="scroll-mt-48" />
+
+```bash
+npm i @zigops-material/react
+```
+
+---
+
+## Using Yarn
+
+Install @zigops-material/react as a dependency using Yarn by running the following command:
+
+<span id="yarn" className="scroll-mt-48" />
+
+```bash
+yarn add @zigops-material/react
+```
+
+---
+
+## Using PNPM
+
+Install @zigops-material/react as a dependency using PNPM by running the following command:
+
+<span id="pnpm" className="scroll-mt-48" />
+
+```bash
+pnpm i @zigops-material/react
+```
+
+---
+
+## TailwindCSS Configurations
+
+<span id="tailwindcss-config" className="scroll-mt-48" />
+
+Once you install @zigops-material/react you need to wrap your tailwind css configurations with the <Code>withZM()</Code> function coming from @zigops-material/react/utils.
+
+```js {1, 3, 9}
+const withZM = require("@zigops-material/react/utils/withZM");
+
+module.exports = withZM({
+  content: ["./pages/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+});
+```
+
+---
+
+## TailwindCSS Configurations with MonoRepo
+
+<span id="with-monorepo" className="scroll-mt-48" />
+
+If you're using monorepo in your project you need to add the theme and components paths to your tailwind.config.js.
+
+```js {6,7}
+const withZM = require("@zigops-material/react/utils/withZM");
+
+module.exports = withZM({
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "path-to-your-node_modules/@zigops-material/react/components/**/*.{js,ts,jsx,tsx}",
+    "path-to-your-node_modules/@zigops-material/react/theme/components/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+});
+```
+
+---
+
+## With Next.js 13 appDir and Server Components
+
+<span id="with-server-components" className="scroll-mt-48" />
+
+If you want to use @zigops-material/react with Next.js 13 appDir feature you need to make use of the <br /> <Code>'use client'</Code> to makes it possible a simple approach is to make a new export file for the components you want to use from @zigops-material/react
+
+```js
+"use client";
+
+import { ThemeProvider, Button } from "@zigops-material/react";
+
+export { ThemeProvider, Button };
+```
+
+<br />
+<br />
+
+Once you've created the export file for the components now you need to import the
+components you want to use from that new created file rather than @zigops-material/react.
+
+```js
+// ❌ invalid - this is not working with server components
+import { Button } from "@zigops-material/react";
+
+// ✅ valid - this will work fine with server components
+import { Button } from "path/to/the/new/file";
+```
+
+---
+
+## Theme Provider
+
+<span id="theme-provider" className="scroll-mt-48" />
+
+@zigops-material/react comes with a theme provider that set's the default theme/styles for components or to provide your own theme/styles to your components. You need to wrap your entire application with the <Code>ThemeProvider</Code> coming from @zigops-material/react.
+
+On the <Code>pages/\_app</Code> put the code bellow.
+
+```jsx {3, 7, 9}
+import "/styles/globals.css";
+
+import { ThemeProvider } from "@zigops-material/react";
+
+export default function MyApp({ Component, pageProps }) {
+  return (
+    <ThemeProvider>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
+}
+```
+
+---
+
+## Example
+
+Now you're good to go and use @zigops-material/react in your project.
+
+<CodePreview id="example" component={<Button>Button</Button>}>
+```jsx
+import { Button } from "@zigops-material/react";
+
+export default function Example() {
+  return <Button>Button</Button>;
+}
+```
+</CodePreview>

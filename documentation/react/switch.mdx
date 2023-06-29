@@ -1,0 +1,214 @@
+---
+title: Tailwind CSS Switch for React - ZigOps Material
+description: Customise your web projects with our easy-to-use switch component for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "switch",
+    "checked-switch",
+    "switch-colors",
+    "switch-with-label",
+    "switch-ripple-effect",
+    "disabled-switch",
+    "switch-with-description",
+    "props",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/switch",
+      description: "Learn more about props definition and types of switch component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/switch",
+      description: "Learn how to customize the theme and styles for switch component.",
+    },
+  ]
+github: switch
+prev: stepper
+next: tabs
+---
+
+# Tailwind CSS Switch - React
+
+Use our Tailwind CSS <Code>Switch</Code> component to let users adjust settings on/off. The option that the <Code>Switch</Code> controls, as well as the state it's in, should be made clear from the corresponding inline label.
+
+See below our example that will help you create simple and easy-to-use <Code>Switch</Code> component for your Tailwind CSS and React project.
+
+<br />
+
+<CodePreview id="switch" link="switch#switch" component={<Switch id="switch-component" />}>
+```jsx
+import { Switch } from "@zigops-material/react";
+
+export default function Example() {
+  return <Switch />;
+}
+```
+</CodePreview>
+
+---
+
+## Checked Switch
+
+Make a <Code>Switch</Code> component checked by default using the <Code>defaultChecked</Code> props.
+
+<CodePreview id="checked-switch" component={<Switch id="checked-switch-component" defaultChecked />}>
+```jsx
+import { Switch } from "@zigops-material/react";
+
+export default function Example() {
+  return <Switch defaultChecked />;
+}
+```
+</CodePreview>
+
+---
+
+## Switch Colors
+
+The <Code>Switch</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
+
+<CodePreview id="switch-colors" link="switch#switch-colors" component={
+  <div className="flex w-max gap-4">
+    <Switch id="switch-1" color="blue" defaultChecked />
+    <Switch id="switch-2" color="red" defaultChecked />
+    <Switch id="switch-3" color="green" defaultChecked />
+    <Switch id="switch-4" color="amber" defaultChecked />
+    <Switch id="switch-5" color="teal" defaultChecked />
+    <Switch id="switch-6" color="indigo" defaultChecked />
+    <Switch id="switch-7" color="purple" defaultChecked />
+    <Switch id="switch-8" color="pink" defaultChecked />
+  </div>
+}>
+```jsx
+import { Switch } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="flex w-max gap-4">
+      <Switch id="blue" color="blue" defaultChecked />
+      <Switch id="red" color="red" defaultChecked />
+      <Switch id="green" color="green" defaultChecked />
+      <Switch id="amber" color="amber" defaultChecked />
+      <Switch id="teal" color="teal" defaultChecked />
+      <Switch id="indigo" color="indigo" defaultChecked />
+      <Switch id="purple" color="purple" defaultChecked />
+      <Switch id="pink" color="pink" defaultChecked />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Switch with Label
+
+You can add a label for the <Code>Switch</Code> component by passing the <Code>label</Code> prop to the <Code>Switch</Code> component.
+
+<CodePreview id="switch-with-label" link="switch#switch-with-label" component={
+  <Switch id="auto-update" label="Automatic Update" />
+}>
+```jsx
+import { Switch } from "@zigops-material/react";
+
+export default function Example() {
+  return <Switch id="auto-update" label="Automatic Update" />;
+}
+```
+</CodePreview>
+
+---
+
+## Switch Ripple Effect
+
+You can turn on/off the ripple effect for the <Code>Switch</Code> component using the <Code>ripple</Code> prop.
+
+<CodePreview id="switch-ripple-effect" link="switch#switch-ripple-effect" component={
+  <>
+    <Switch id="ripple-on" label="Ripple Effect On" />
+    <Switch id="ripple-off" label="Ripple Effect Off" ripple={false} />
+  </>
+}>
+```jsx
+import { Switch } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="space-x-8">
+      <Switch id="ripple-on" label="Ripple Effect On" ripple={true} />
+      <Switch id="ripple-off" label="Ripple Effect Off" ripple={false} />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Disabled Switch
+
+You can make a switch disable by passing the <Code>disabled</Code> prop to the <Code>Switch</Code> component.
+
+<CodePreview id="disabled-switch" component={
+  <Switch id="switch-disabled" disabled={true} />
+}>
+```jsx
+import { Switch } from "@zigops-material/react";
+
+export default function Example() {
+  return <Switch disabled={true} />;
+}
+```
+</CodePreview>
+
+---
+
+## Switch with Description
+
+Use the example below for a more complex usage of switch with label that contains some description.
+
+<CodePreview id="switch-with-description" component={
+  <Switch
+    id="switch-description"
+    label={
+      <div>
+        <Typography color="blue-gray" className="font-medium">Remember Me</Typography>
+        <Typography variant="small" color="gray" className="font-normal">
+          You'll be able to login without password for 24 hours.
+        </Typography>
+      </div>
+    } 
+    containerProps={{
+      className: "-mt-5"
+    }}
+  />
+}>
+```jsx
+import { Switch } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <Switch
+      label={
+        <div>
+          <Typography color="blue-gray" className="font-medium">Remember Me</Typography>
+          <Typography variant="small" color="gray" className="font-normal">
+            You'll be able to login without password for 24 hours.
+          </Typography>
+        </div>
+      } 
+      containerProps={{
+        className: "-mt-5"
+      }}
+    />
+  );
+}
+```
+</CodePreview>
+
+<span id="props" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

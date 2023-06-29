@@ -1,0 +1,29 @@
+{
+  "name": "@zigops-material/html",
+  "homepage": "https://zigops-material.com",
+  "version": "2.0.0",
+  "description": "@zigops-material/html is an easy-to-use components library for Tailwind CSS inspired by Material Design.",
+  "license": "MIT",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "copy": "cp -r ./theme ./dist/theme && cp -r ./utils ./dist && cp package.json ./dist && cp ./README.md ./dist && cp ./LICENSE ./dist",
+    "compile:ripple": "swc ./node_modules/material-ripple-effects/ripple.js -o ./dist/scripts/ripple.js --config-file .swcrc",
+    "build:js": "swc ./scripts -d ./dist/scripts --config-file .swcrc",
+    "build:css": "npx tailwindcss -i ./styles/tailwind.css -o ./dist/styles/zigops-material.css -m",
+    "build": "pnpm build:js && pnpm compile:ripple && pnpm build:css && pnpm copy"
+  },
+  "dependencies": {
+    "deepmerge": "^4.2.2",
+    "material-ripple-effects": "^2.0.1"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.1.59",
+    "@swc/core": "^1.3.27",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.4"
+  }
+}

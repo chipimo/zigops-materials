@@ -1,0 +1,380 @@
+---
+title: Tailwind CSS Input for React - ZigOps Material
+description: Customise your web projects with our complex inputs component for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "input",
+    "input-variants",
+    "input-sizes",
+    "input-colors",
+    "input-validations",
+    "input-with-icon",
+    "input-with-helper-text",
+    "input-with-button",
+    "input-with-dropdown",
+    "disabled-input",
+    "props",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/input",
+      description: "Learn more about props definition and types of input component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/input",
+      description: "Learn how to customize the theme and styles for input component.",
+    },
+  ]
+github: input
+prev: icon-button
+next: form
+---
+
+# Tailwind CSS Input - React
+
+Easily create <Code>Input</Code> with different statuses and sizes using our components based on Tailwind CSS and React.
+
+<Code>Input</Code> fields are an essential user interface design element, providing users with the means
+to enter non-standardized responses.
+
+See below our <Code>Input</Code> component examples. It comes in different styles and colors, so you can adapt it easily to your needs.
+
+<br />
+
+<CodePreview id="input" link="input#input" component={
+  <div className="w-72">
+    <Input label="Required" />
+  </div>
+}>
+```jsx
+import { Input } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="w-72">
+      <Input label="Username" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Input Variants
+
+The <Code>Input</Code> component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
+
+<CodePreview id="input-variants" link="input#input-variants" component={
+  <div className="flex flex-col w-72 gap-6">
+    <Input variant="static" label="Static" placeholder="Static" />
+    <Input variant="standard" label="Standard" />
+    <Input variant="outlined" label="Outlined" />
+  </div>
+}>
+```jsx
+import { Input } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="flex flex-col w-72 gap-6">
+      <Input variant="static" label="Static" placeholder="Static" />
+      <Input variant="standard" label="Standard" />
+      <Input variant="outlined" label="Outlined" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Input Sizes
+
+The <Code>Input</Code> component comes with 2 different sizes that you can change it using the <Code>size</Code> prop.
+
+<CodePreview id="input-sizes" link="input#input-sizes" component={
+  <div className="flex flex-col w-72 items-end gap-6">
+    <Input size="md" label="Input Medium" />
+    <Input size="lg" label="Input Large" />
+  </div>
+}>
+```jsx
+import { Input } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="flex flex-col w-72 items-end gap-6">
+      <Input size="md" label="Input Medium" />
+      <Input size="lg" label="Input Large" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Input Colors
+
+The <Code>Input</Code> component comes with 21 different colors that you can change it using the <Code>color</Code> prop.
+
+<CodePreview id="input-colors" link="input#input-colors" component={
+  <div className="flex w-72 flex-col gap-6">
+    <Input color="blue" label="Input Blue" />
+    <Input color="purple" label="Input Purple" />
+    <Input color="indigo" label="Input Indigo" />
+    <Input color="teal" label="Input Teal" />
+  </div>
+}>
+```jsx
+import { Input } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="flex w-72 flex-col gap-6">
+      <Input color="blue" label="Input Blue" />
+      <Input color="purple" label="Input Purple" />
+      <Input color="indigo" label="Input Indigo" />
+      <Input color="teal" label="Input Teal" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Input Validations
+
+The <Code>Input</Code> component comes with error and success states for performing validations.
+
+<CodePreview id="input-validations" link="input#input-validations" component={
+  <div div className="flex flex-col w-72 items-end gap-6">
+    <Input label="Input Error" error />
+    <Input label="Input Success" success />
+  </div>
+}>
+```jsx
+import { Input } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="flex flex-col w-72 items-end gap-6">
+      <Input label="Input Error" error />
+      <Input label="Input Success" success />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Input With Icon
+
+You can add icon for the <Code>Input</Code> component using the <Code>icon</Code> prop.
+
+<CodePreview id="input-with-icon" link="input#input-with-icon" component={
+  <div className="w-72">
+    <Input label="Input With Icon" icon={<i className="fas fa-heart" />} />
+  </div>
+}>
+```jsx
+import { Input } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="w-72">
+      <Input label="Input With Icon" icon={<i className="fas fa-heart" />} />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Input With Helper Text
+
+Use the example below for an input with a helper text.
+
+<CodePreview id="input-with-helper-text" component={
+  <div className="w-[32rem]">
+    <Input type="password" label="Password" />
+    <Typography variant="small" color="gray" className="flex items-center gap-1 font-normal mt-2">
+      <SolidIcons.InformationCircleIcon className="w-4 h-4 -mt-px" />
+      Use at least 8 characters, one uppercase, one lowercase and one number.
+    </Typography>
+  </div>
+}>
+```jsx
+import { Input, Typography } from "@zigops-material/react";
+import { InformationCircleIcon } from "@heroicons/react/24/solid"
+
+export default function Example() {
+  return (
+    <div className="w-[32rem]">
+      <Input type="password" label="Password" />
+      <Typography variant="small" color="gray" className="flex items-center gap-1 font-normal mt-2">
+        <InformationCircleIcon className="w-4 h-4 -mt-px" />
+        Use at least 8 characters, one uppercase, one lowercase and one number.
+      </Typography>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Input With Button
+
+Use the example below for an input containing a button inside.
+
+<CodePreview id="input-with-button" link="input#input-with-button" component={<InputWithButton />}>
+```jsx
+import React from "react";
+import { Input, Button } from "@zigops-material/react";
+
+export default function Example() {
+  const [email, setEmail] = React.useState("");
+  const onChange = ({ target }) => setEmail(target.value);
+  
+  return (
+    <div className="relative flex w-full max-w-[24rem]">
+      <Input
+        type="email"
+        label="Email Address"
+        value={email}
+        onChange={onChange}
+        className="pr-20"
+        containerProps={{
+          className: "min-w-0",
+        }}
+      />
+      <Button
+        size="sm"
+        color={email ? "blue" : "blue-gray"}
+        disabled={!email}
+        className="!absolute right-1 top-1 rounded"
+      >
+        Invite
+      </Button>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Input With Dropdown
+
+Use the example below for an input containing a countries code dropdown.
+
+<CodePreview id="input-with-dropdown" component={<CountriesCodeInput />}>
+```jsx
+import React from "react";
+import { useCountries } from "use-react-countries";
+import {
+  Input,
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
+  Button,
+} from "@zigops-material/react";
+ 
+export default function Example() {
+  const { countries } = useCountries();
+  const [country, setCountry] = React.useState(0);
+  const { name, flags, countryCallingCode } = countries[country];
+ 
+  return (
+    <div className="relative flex w-full max-w-[24rem]">
+      <Menu placement="bottom-start">
+        <MenuHandler>
+          <Button
+            ripple={false}
+            variant="text"
+            color="blue-gray"
+            className="flex h-10 items-center gap-2 rounded-r-none border border-r-0 border-blue-gray-200 bg-blue-gray-500/10 pl-3"
+          >
+            <img
+              src={flags.svg}
+              alt={name}
+              className="h-4 w-4 rounded-full object-cover"
+            />
+            {countryCallingCode}
+          </Button>
+        </MenuHandler>
+        <MenuList className="max-h-[20rem] max-w-[18rem]">
+          {countries.map(
+            ({ name, flags, countryCallingCode }, index) => {
+              return (
+                <MenuItem
+                  key={name}
+                  value={name}
+                  className="flex items-center gap-2"
+                  onClick={() => setCountry(index)}
+                >
+                  <img
+                    src={flags.svg}
+                    alt={name}
+                    className="h-5 w-5 rounded-full object-cover"
+                  />
+                  {name} <span className="ml-auto">{countryCallingCode}</span>
+                </MenuItem>
+              );
+            }
+          )}
+        </MenuList>
+      </Menu>
+      <Input
+        type="tel"
+        placeholder="Mobile Number"
+        className="rounded-l-none !border-t-blue-gray-200 focus:!border-t-blue-500"
+        labelProps={{
+          className: "before:content-none after:content-none",
+        }}
+        containerProps={{
+          className: "min-w-0",
+        }}
+      />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Disabled Input
+
+An <Code>Input</Code> could be disabled as well, it will help you to prevent user interactions like click or focus over the <Code>Input</Code> component.
+
+<CodePreview id="disabled-input" link="input#disabled-input" component={
+  <div className="w-72">
+    <Input label="Disabled" disabled />
+  </div>
+}>
+```jsx
+import { Input } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="w-72">
+      <Input label="Disabled" disabled />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+<span id="props" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

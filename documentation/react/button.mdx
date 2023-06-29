@@ -1,0 +1,313 @@
+---
+title: Tailwind CSS Button for React - ZigOps Material
+description: Customise your web projects with our easy-to-use button component for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "button",
+    "button-variants",
+    "button-sizes",
+    "button-colors",
+    "button-with-icon",
+    "block-level-button",
+    "button-ripple-effect",
+    "custom-auth-buttons",
+    "props",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/button",
+      description: "Learn more about props definition and types of button component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/button",
+      description: "Learn how to customize the theme and styles for button component.",
+    },
+  ]
+github: button
+prev: breadcrumbs
+next: card
+---
+
+# Tailwind CSS Button - React
+
+Use our <Code>Button</Code> based on Tailwind CSS for actions in forms, dialogues, and more.
+
+<Code>Button</Code> is an essential element of web design. Basically,
+<Code>Button</Code> is styled links that grab the user's attention. They help users
+navigate our websites or apps and drive them to a particular action like submitting
+a contact form or placing an order as easy as possible.
+
+See below our <Code>Button</Code> example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
+
+<br />
+
+<CodePreview id="button" link="button#button" component={<Button>Button</Button>}>
+```jsx
+import { Button } from "@zigops-material/react";
+
+export default function Example() {
+  return <Button>Button</Button>;
+}
+```
+</CodePreview>
+
+---
+
+## Button Variants
+
+The <Code>Button</Code> component comes with 4 different variants that you can change it using the <Code>variant</Code> prop.
+
+<CodePreview id="button-variants" link="button#button-variants" component={
+  <div className="flex w-max gap-4">
+    <Button>filled</Button>
+    <Button variant="gradient">gradient</Button>
+    <Button variant="outlined">outlined</Button>
+    <Button variant="text">text</Button>
+  </div>
+}>
+```jsx
+import { Button } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="flex w-max gap-4">
+      <Button variant="filled">filled</Button>
+      <Button variant="gradient">gradient</Button>
+      <Button variant="outlined">outlined</Button>
+      <Button variant="text">text</Button>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Button Sizes
+
+The <Code>Button</Code> component comes with 3 different sizes that you can change it using the <Code>size</Code> prop.
+
+<CodePreview id="button-sizes" link="button#button-sizes" component={
+  <div className="flex w-max items-end gap-4">
+    <Button size="sm">small</Button>
+    <Button>medium</Button>
+    <Button size="lg">large</Button>
+  </div>
+}>
+```jsx
+import { Button } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="flex w-max items-end gap-4">
+      <Button size="sm">small</Button>
+      <Button size="md">medium</Button>
+      <Button size="lg">large</Button>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Button Colors
+
+The <Code>Button</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
+
+<CodePreview id="button-colors" link="button#button-colors" component={
+  <div className="flex w-max gap-4">
+    <Button color="blue">color blue</Button>
+    <Button color="red">color red</Button>
+    <Button color="green">color green</Button>
+    <Button color="amber">color amber</Button>
+  </div>
+}>
+```jsx
+import { Button } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="flex w-max gap-4">
+      <Button color="blue">color blue</Button>
+      <Button color="red">color red</Button>
+      <Button color="green">color green</Button>
+      <Button color="amber">color amber</Button>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Button with Icon
+
+You can use any type of icons inside the button, in the below example we've used the <a href="https://heroicons.com/?ref=zigops-material" target="_blank" className="hover:text-blue-500 transition-colors font-medium">@heroicons</a>.
+
+<CodePreview id="button-with-icon" link="button#button-with-icon" component={
+  <div className="flex items-center gap-4">
+    <Button className="flex items-center gap-3">
+      <OutlineIcons.BookmarkIcon strokeWidth={2} className="h-5 w-5" /> Add to Bookmark
+    </Button>
+    <Button variant="gradient" className="flex items-center gap-3">
+      <OutlineIcons.CloudArrowUpIcon strokeWidth={2} className="h-5 w-5" /> Upload Files
+    </Button>
+    <Button variant="outlined" className="flex items-center gap-3">
+      Refresh
+      <OutlineIcons.ArrowPathIcon strokeWidth={2} className="h-5 w-5" />
+    </Button>
+    <Button variant="text" className="flex items-center gap-2">
+      Read More <OutlineIcons.ArrowLongRightIcon strokeWidth={2} className="h-5 w-5" />
+    </Button>
+  </div>
+}>
+```jsx
+import { Button } from "@zigops-material/react";
+import {
+  CloudArrowUpIcon,
+  ArrowLongRightIcon,
+  ArrowPathIcon,
+  BookmarkIcon,
+} from "@heroicons/react/24/outline";
+
+export default function Day01() {
+  return (
+    <div className="flex items-center gap-4">
+      <Button className="flex items-center gap-3">
+        <BookmarkIcon strokeWidth={2} className="h-5 w-5" /> Add to Bookmark
+      </Button>
+      <Button variant="gradient" className="flex items-center gap-3">
+        <CloudArrowUpIcon strokeWidth={2} className="h-5 w-5" /> Upload Files
+      </Button>
+      <Button variant="outlined" className="flex items-center gap-3">
+        Refresh
+        <ArrowPathIcon strokeWidth={2} className="h-5 w-5" />
+      </Button>
+      <Button variant="text" className="flex items-center gap-2">
+        Read More <ArrowLongRightIcon strokeWidth={2} className="h-5 w-5" />
+      </Button>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Block Level Button
+
+A <Code>Button</Code> could be a block level component as well that get's all the available space in a row. You can render a <Code>Button</Code> as a block level element using the <Code>fullWidth</Code> prop.
+
+<CodePreview id="block-level-button" link="button#block-level-button" component={<Button fullWidth>block level button</Button>}>
+```jsx
+import { Button } from "@zigops-material/react";
+
+export default function Example() {
+  return <Button fullWidth>block level button</Button>;
+}
+```
+</CodePreview>
+
+---
+
+## Button Ripple Effect
+
+You can turn on/off the ripple effect for the <Code>Button</Code> component using the <Code>ripple</Code> prop.
+
+<CodePreview id="button-ripple-effect" link="button#button-ripple-effect" component={
+  <div className="flex w-max gap-4">
+    <Button ripple={true}>Ripple Effect On</Button>
+    <Button ripple={false}>Ripple Effect Off</Button>
+  </div>
+}>
+```jsx
+import { Button } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="flex w-max gap-4">
+      <Button ripple={true}>Ripple Effect On</Button>
+      <Button ripple={false}>Ripple Effect Off</Button>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Custom Auth Buttons
+
+You can use tailwind css classes with <Code>Button</Code> to create beautiful buttons for different purposes, below you can use some button examples used for authentication with social media and web 3.0.
+
+<CodePreview id="custom-auth-buttons" link="button#custom-auth-buttons" component={
+  <div className="flex flex-col items-center gap-4">
+    <Button size="lg" color="white" className="flex items-center gap-3">
+      <img src="/icons/metamask.svg" alt="metamask" className="h-6 w-6" />
+      Connect Wallet
+    </Button>
+    <Button
+      size="lg"
+      variant="outlined"
+      color="blue-gray"
+      className="flex items-center gap-3"
+    >
+      <img src="/icons/google.svg" alt="metamask" className="h-6 w-6" />
+      Continue with Google
+    </Button>
+    <Button
+      size="lg"
+      variant="gradient"
+      color="light-blue"
+      className="group relative flex items-center gap-3 overflow-hidden pr-[72px]"
+    >
+      Sign in with Twitter
+      <span className="absolute right-0 grid h-full w-12 place-items-center bg-light-blue-600 transition-colors group-hover:bg-light-blue-700">
+        <img src="/icons/twitter.svg" alt="metamask" className="h-6 w-6" />
+      </span>
+    </Button>
+  </div>
+}>
+```jsx
+import { Button } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="flex flex-col items-center gap-4">
+      <Button size="lg" color="white" className="flex items-center gap-3">
+        <img src="/icons/metamask.svg" alt="metamask" className="h-6 w-6" />
+        Connect Wallet
+      </Button>
+      <Button
+        size="lg"
+        variant="outlined"
+        color="blue-gray"
+        className="flex items-center gap-3"
+      >
+        <img src="/icons/google.svg" alt="metamask" className="h-6 w-6" />
+        Continue with Google
+      </Button>
+      <Button
+        size="lg"
+        variant="gradient"
+        color="light-blue"
+        className="group relative flex items-center gap-3 overflow-hidden pr-[72px]"
+      >
+        Sign in with Twitter
+        <span className="absolute right-0 grid h-full w-12 place-items-center bg-light-blue-600 transition-colors group-hover:bg-light-blue-700">
+          <img src="/icons/twitter.svg" alt="metamask" className="h-6 w-6" />
+        </span>
+      </Button>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+<span id="props" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

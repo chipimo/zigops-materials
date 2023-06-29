@@ -1,0 +1,221 @@
+---
+title: Tailwind CSS Progress Bar for React - ZigOps Material
+description: Customise your web projects with our easy-to-use progress bar component for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "progress-bar",
+    "progress-bar-variants",
+    "progress-bar-sizes",
+    "progress-bar-colors",
+    "progress-bar-with-label",
+    "progress-bar-sizes-with-label",
+    "progress-bar-with-label-outside",
+    "props",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/progress-bar",
+      description: "Learn more about props definition and types of progress bar component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/progress-bar",
+      description: "Learn how to customize the theme and styles for progress bar component.",
+    },
+  ]
+github: progress-bar
+prev: popover
+next: pagination
+---
+
+# Tailwind CSS Progress Bar - React
+
+Our Tailwind CSS progressbar can be used to show a user how far along he is in a process. The progress can be determinate or indeterminate. Use the Progress Bar to show an ongoing process that takes a noticeable time to finish.
+
+Below we are presenting our examples of <Code>Progress</Code> component that you can use in your Tailwind CSS and React project. It comes in different styles and colors, so you can adapt it easily to your needs.
+
+<br />
+
+<CodePreview id="progress-bar" link="progress-bar#progress-bar" component={<Progress value={50} />}>
+```jsx
+import { Progress } from "@zigops-material/react";
+
+export default function Example() {
+  return <Progress value={50} />;
+}
+```
+</CodePreview>
+
+---
+
+## Progress Bar Variants
+
+The <Code>Progress</Code> component comes with 2 different variants that you can change it using the <Code>color</Code> prop.
+
+<CodePreview id="progress-bar-variants" link="progress-bar#progress-bar-variants" component={
+  <div className="flex w-full flex-col gap-4">
+    <Progress value={50} variant="filled" />
+    <Progress value={50} variant="gradient" />
+  </div>
+}>
+```jsx
+import { Progress } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="flex w-full flex-col gap-4">
+      <Progress value={50} variant="filled" />
+      <Progress value={50} variant="gradient" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Progress Bar Sizes
+
+The <Code>Progress</Code> component comes with 3 different sizes that you can change it using the <Code>size</Code> prop.
+
+<CodePreview id="progress-bar-sizes" component={
+  <div className="flex w-full flex-col gap-4">
+    <Progress value={25} size="sm" />
+    <Progress value={50} size="md" />
+    <Progress value={75} size="lg" />
+  </div>
+}>
+```jsx
+import { Progress } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="flex w-full flex-col gap-4">
+      <Progress value={25} size="sm" />
+      <Progress value={50} size="md" />
+      <Progress value={75} size="lg" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Progress Bar Colors
+
+The <Code>Progress</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
+
+<CodePreview id="progress-bar-colors" link="progress-bar#progress-bar-colors" component={
+  <div className="flex w-full flex-col gap-4">
+    <Progress value={50} color="blue" />
+    <Progress value={50} color="red" />
+    <Progress value={50} color="green" />
+    <Progress value={50} color="amber" />
+    <Progress value={50} color="teal" />
+    <Progress value={50} color="indigo" />
+    <Progress value={50} color="purple" />
+    <Progress value={50} color="pink" />
+  </div>
+}>
+```jsx
+import { Progress } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="flex w-full flex-col gap-4">
+      <Progress value={50} color="blue" />
+      <Progress value={50} color="red" />
+      <Progress value={50} color="green" />
+      <Progress value={50} color="amber" />
+      <Progress value={50} color="teal" />
+      <Progress value={50} color="indigo" />
+      <Progress value={50} color="purple" />
+      <Progress value={50} color="pink" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Progress Bar with Label
+
+You can add custom label inside the progress bar using the <Code>label</Code> prop.
+
+<CodePreview id="progress-bar-with-label" link="progress-bar#progress-bar-with-label" component={<Progress value={50} label="Completed" />}>
+```jsx
+import { Progress } from "@zigops-material/react";
+
+export default function Example() {
+  return <Progress value={50} label="Completed" />;
+}
+```
+</CodePreview>
+
+---
+
+## Progress Bar Sizes with Label
+
+The <Code>Progress</Code> component sizes are different when you use the <Code>label</Code> prop, this helps to make the label text more readable.
+
+<CodePreview id="progress-bar-sizes-with-label" component={
+  <div className="flex w-full flex-col gap-4">
+    <Progress value={25} size="sm" label="Small" />
+    <Progress value={50} size="md" label="Medium" />
+    <Progress value={75} size="lg" label="Large" />
+  </div>
+}>
+```jsx
+import { Progress } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="flex w-full flex-col gap-4">
+      <Progress value={25} size="sm" label="Small" />
+      <Progress value={50} size="md" label="Medium" />
+      <Progress value={75} size="lg" label="Large" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Progress Bar with Label Outside
+
+Use the example below to add the label outside the progress bar.
+
+<CodePreview id="progress-bar-with-label-outside" component={
+  <div className="w-full">
+    <div className="flex items-center justify-between gap-4 mb-2">
+      <Typography color="blue" variant="h6">Completed</Typography>
+      <Typography color="blue" variant="h6">50%</Typography>
+    </div>
+    <Progress value={50} />
+  </div>
+}>
+```jsx
+import { Progress, Typography } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="w-full">
+      <div className="flex items-center justify-between gap-4 mb-2">
+        <Typography color="blue" variant="h6">Completed</Typography>
+        <Typography color="blue" variant="h6">50%</Typography>
+      </div>
+      <Progress value={50} />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+<span id="props" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

@@ -1,0 +1,253 @@
+---
+title: Tailwind CSS Avatar for React - ZigOps Material
+description: Customise your web projects  with our easy-to-use avatar component for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "avatar",
+    "avatar-variants",
+    "avatar-sizes",
+    "avatar-with-border",
+    "avatar-with-text",
+    "avatar-stack",
+    "props",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/avatar",
+      description: "Learn more about props definition and types of avatar component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/avatar",
+      description: "Learn how to customize the theme and styles for avatar component.",
+    },
+  ]
+github: avatar
+prev: alert
+next: badge
+---
+
+# Tailwind CSS Avatar - React
+
+Use our Tailwind CSS <Code>Avatar</Code> component to portray people or objects in your web projects. The <Code>Avatar</Code> can be used as a visual identifier for a user profile on your website.
+
+See below our beautiful <Code>Avatar</Code> example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors so you can adapt it easily to your needs.
+
+<br />
+
+<CodePreview id="avatar" link="avatar#avatar" component={<Avatar src="/img/face-2.jpg" alt="avatar" />}>
+```jsx
+import { Avatar } from "@zigops-material/react";
+
+export default function Example() {
+  return <Avatar src="/img/face-2.jpg" alt="avatar" />;
+}
+```
+</CodePreview>
+
+---
+
+## Avatar Variants
+
+The <Code>Avatar</Code> component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
+
+<CodePreview id="avatar-variants" link="avatar#avatar-variants" component={
+  <div className="flex gap-4">
+    <Avatar src="/img/face-2.jpg" alt="avatar" />
+    <Avatar src="/img/face-2.jpg" alt="avatar" variant="rounded" />
+    <Avatar src="/img/face-2.jpg" alt="avatar" variant="square" />
+  </div>
+}>
+```jsx
+import { Avatar } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="flex gap-4">
+      <Avatar src="/img/face-2.jpg" alt="avatar" />
+      <Avatar src="/img/face-2.jpg" alt="avatar" variant="rounded" />
+      <Avatar src="/img/face-2.jpg" alt="avatar" variant="square" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Avatar Sizes
+
+The <Code>Avatar</Code> component comes with 6 different sizes that you can change it using the <Code>size</Code> prop.
+
+<CodePreview id="avatar-sizes" link="avatar#avatar-sizes" component={
+  <div className="flex w-max items-end gap-4">
+    <Avatar src="/img/face-2.jpg" alt="avatar" size="xs" />
+    <Avatar src="/img/face-2.jpg" alt="avatar" size="sm" />
+    <Avatar src="/img/face-2.jpg" alt="avatar" size="md" />
+    <Avatar src="/img/face-2.jpg" alt="avatar" size="lg" />
+    <Avatar src="/img/face-2.jpg" alt="avatar" size="xl" />
+    <Avatar src="/img/face-2.jpg" alt="avatar" size="xxl" />
+  </div>
+}>
+```jsx
+import { Avatar } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="flex w-max items-end gap-4">
+      <Avatar src="/img/face-2.jpg" alt="avatar" size="xs" />
+      <Avatar src="/img/face-2.jpg" alt="avatar" size="sm" />
+      <Avatar src="/img/face-2.jpg" alt="avatar" size="md" />
+      <Avatar src="/img/face-2.jpg" alt="avatar" size="lg" />
+      <Avatar src="/img/face-2.jpg" alt="avatar" size="xl" />
+      <Avatar src="/img/face-2.jpg" alt="avatar" size="xxl" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Avatar with border
+
+You can add border around the avatar using the <Code>withBorder</Code> prop. To change the color of the avatar border use the <Code>color</Code> prop, by default it's <Code>blue</Code>.
+
+<CodePreview id="avatar-with-border" link="avatar#avatar-with-border" component={
+  <div className="flex gap-4">
+    <Avatar src="/img/face-2.jpg" alt="avatar" withBorder={true} className="p-0.5" />
+    <Avatar src="/img/face-2.jpg" alt="avatar" variant="rounded" withBorder={true} color="green" className="p-0.5" />
+    <Avatar src="/img/face-2.jpg" alt="avatar" variant="square" withBorder={true} color="pink" className="p-0.5" />
+  </div>
+}>
+```jsx
+import { Avatar } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="flex gap-4">
+      <Avatar src="/img/face-2.jpg" alt="avatar" withBorder={true} className="p-0.5" />
+      <Avatar src="/img/face-2.jpg" alt="avatar" variant="rounded" withBorder={true} color="green" className="p-0.5" />
+      <Avatar src="/img/face-2.jpg" alt="avatar" variant="square" withBorder={true} color="pink" className="p-0.5" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Avatar with Text
+
+You can use avatar with other components as well, see example below.
+
+<CodePreview id="avatar-with-text" link="avatar#avatar-with-text" component={
+  <div className="flex flex-col gap-6">
+    <div className="flex items-center gap-4">
+      <Avatar src="/img/face-2.jpg" alt="avatar" />
+      <div>
+        <Typography variant="h6">Candice Wu</Typography>
+        <Typography variant="small" color="gray" className="font-normal">Web Developer</Typography>
+      </div>
+    </div> 
+    <div className="flex items-center gap-4">
+      <Avatar src="/img/face-2.jpg" alt="avatar" variant="rounded" />
+      <div>
+        <Typography variant="h6">Candice Wu</Typography>
+        <Typography variant="small" color="gray" className="font-normal">Web Developer</Typography>
+      </div>
+    </div> 
+    <div className="flex items-center gap-4">
+      <Avatar src="/img/face-2.jpg" alt="avatar" variant="square" />
+      <div>
+        <Typography variant="h6">Candice Wu</Typography>
+        <Typography variant="small" color="gray" className="font-normal">Web Developer</Typography>
+      </div>
+    </div> 
+  </div>
+}>
+```jsx
+import { Avatar, Typography } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="flex flex-col gap-6">
+      <div className="flex items-center gap-4">
+        <Avatar src="/img/face-2.jpg" alt="avatar" />
+        <div>
+          <Typography variant="h6">Candice Wu</Typography>
+          <Typography variant="small" color="gray" className="font-normal">Web Developer</Typography>
+        </div>
+      </div> 
+      <div className="flex items-center gap-4">
+        <Avatar src="/img/face-2.jpg" alt="avatar" variant="rounded" />
+        <div>
+          <Typography variant="h6">Candice Wu</Typography>
+          <Typography variant="small" color="gray" className="font-normal">Web Developer</Typography>
+        </div>
+      </div> 
+      <div className="flex items-center gap-4">
+        <Avatar src="/img/face-2.jpg" alt="avatar" variant="square" />
+        <div>
+          <Typography variant="h6">Candice Wu</Typography>
+          <Typography variant="small" color="gray" className="font-normal">Web Developer</Typography>
+        </div>
+      </div> 
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Avatar Stack
+
+<CodePreview id="avatar-stack" link="avatar#avatar-stack" className="mt-4" component={<AvatarStack />}>
+```jsx
+import { Avatar } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <div className="flex items-center -space-x-4">
+      <Avatar
+        variant="circular"
+        alt="user 1"
+        className="border-2 border-white hover:z-10 focus:z-10"
+        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+      />
+      <Avatar
+        variant="circular"
+        alt="user 2"
+        className="border-2 border-white hover:z-10 focus:z-10"
+        src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1061&q=80"
+      />
+      <Avatar
+        variant="circular"
+        alt="user 3"
+        className="border-2 border-white hover:z-10 focus:z-10"
+        src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1288&q=80"
+      />
+      <Avatar
+        variant="circular"
+        alt="user 4"
+        className="border-2 border-white hover:z-10 focus:z-10"
+        src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80"
+      />
+      <Avatar
+        variant="circular"
+        alt="user 5"
+        className="border-2 border-white hover:z-10 focus:z-10"
+        src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80"
+      />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+<span id="props" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

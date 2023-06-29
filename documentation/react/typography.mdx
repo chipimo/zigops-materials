@@ -1,0 +1,204 @@
+---
+title: Tailwind CSS Typography for React - ZigOps Material
+description: Customise your web projects with our beautiful typography component for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "typography",
+    "typography-variants",
+    "typography-colors",
+    "typography-gradient-color",
+    "props",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/typography",
+      description: "Learn more about props definition and types of typography component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/typography",
+      description: "Learn how to customize the theme and styles for typography component.",
+    },
+  ]
+github: typography
+prev: tooltip
+next: footer
+---
+
+# Tailwind CSS Typography - React
+
+Use our Tailwind CSS <Code>Typography</Code> to present your website/web app as clearly and efficiently as possible.
+
+Below we are presenting a simple <Code>Typography</Code> component example. It comes in different styles and colors, so you can adapt it easily to your needs.
+
+<br />
+
+<CodePreview id="typography" link="typography#paragraph" component={
+  <Typography>
+    {`ZigOps Material is an easy to use components library for Tailwind CSS and
+    Material Design. It provides a simple way to customize your components, you
+    can change the colors, fonts, breakpoints and everything you need.`}
+  </Typography>
+}>
+```jsx
+import { Typography } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <Typography>
+      ZigOps Material is an easy to use components library for Tailwind CSS
+      and Material Design. It provides a simple way to customize your
+      components, you can change the colors, fonts, breakpoints and everything
+      you need.
+    </Typography>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Typography Variants
+
+The <Code>Typography</Code> component comes with 9 different variants that you can change it using the <Code>variant</Code> prop.
+
+<CodePreview id="typography-variants" link="typography#typography" component={
+  <div className="flex flex-col gap-8 text-left">
+    <Typography variant="h1">ZigOps Material</Typography>
+    <Typography variant="h2">ZigOps Material</Typography>
+    <Typography variant="h3">ZigOps Material</Typography>
+    <Typography variant="h4">ZigOps Material</Typography>
+    <Typography variant="h5">ZigOps Material</Typography>
+    <Typography variant="h6" className="capitalize">
+      {`ZigOps Material`}
+    </Typography>
+    <Typography variant="lead">
+      {`ZigOps Material is an easy to use components library for Tailwind CSS and
+      Material Design. It provides a simple way to customize your components, you
+      can change the colors, fonts, breakpoints and everything you need.`}
+    </Typography>
+    <Typography variant="paragraph">
+      {`ZigOps Material is an easy to use components library for Tailwind CSS and
+      Material Design. It provides a simple way to customize your components, you
+      can change the colors, fonts, breakpoints and everything you need.`}
+    </Typography>
+    <Typography variant="small">
+      {`ZigOps Material is an easy to use components library for Tailwind CSS and
+      Material Design. It provides a simple way to customize your components, you
+      can change the colors, fonts, breakpoints and everything you need.`}
+    </Typography>
+  </div>
+}>
+```jsx
+import { Fragment } from "react";
+import { Typography } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <Fragment>
+      <Typography variant="h1">ZigOps Material</Typography>
+      <Typography variant="h2">ZigOps Material</Typography>
+      <Typography variant="h3">ZigOps Material</Typography>
+      <Typography variant="h4">ZigOps Material</Typography>
+      <Typography variant="h5">ZigOps Material</Typography>
+      <Typography variant="h6">ZigOps Material</Typography>
+      <Typography variant="lead">
+        ZigOps Material is an easy to use components library for Tailwind CSS
+        and Material Design. It provides a simple way to customize your
+        components, you can change the colors, fonts, breakpoints and everything
+        you need.
+      </Typography>
+      <Typography variant="paragraph">
+        ZigOps Material is an easy to use components library for Tailwind CSS
+        and Material Design. It provides a simple way to customize your
+        components, you can change the colors, fonts, breakpoints and everything
+        you need.
+      </Typography>
+      <Typography variant="small">
+        ZigOps Material is an easy to use components library for Tailwind CSS
+        and Material Design. It provides a simple way to customize your
+        components, you can change the colors, fonts, breakpoints and everything
+        you need.
+      </Typography>
+    </Fragment>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Typography Colors
+
+The <Code>Typography</Code> component comes with 23 different colors that you can change it using the <Code>color</Code> prop.
+
+<CodePreview id="typography-colors" link="typography#typography-colors" component={
+  <div className="flex flex-col gap-8 text-left">
+    <Typography variant="h1" color="blue-gray">
+      {`ZigOps Material`}
+    </Typography>
+    <Typography variant="h1" color="blue">
+      {`ZigOps Material`}
+    </Typography>
+    <Typography variant="h1" color="red">
+      {`ZigOps Material`}
+    </Typography>
+    <Typography variant="h1" color="green">
+      {`ZigOps Material`}
+    </Typography>
+  </div>
+}>
+```jsx
+import { Fragment } from "react";
+import { Typography } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <Fragment>
+      <Typography variant="h1" color="blue-gray">
+        ZigOps Material
+      </Typography>
+      <Typography variant="h1" color="blue">
+        ZigOps Material
+      </Typography>
+      <Typography variant="h1" color="red">
+        ZigOps Material
+      </Typography>
+      <Typography variant="h1" color="green">
+        ZigOps Material
+      </Typography>
+    </Fragment>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Typography Gradient Colors
+
+You can change the <Code>Typography</Code> text color into a gradient color using the <Code>textGradient</Code> prop.
+
+<CodePreview id="typography-gradient-color" link="typography#typography-gradient-color" component={
+  <Typography variant="h1" color="blue" textGradient>
+    {`ZigOps Material`}
+  </Typography>
+}>
+```jsx
+import { Typography } from "@zigops-material/react";
+
+export default function Example() {
+  return (
+    <Typography variant="h1" color="blue" textGradient>
+      ZigOps Material
+    </Typography>
+  );
+}
+```
+</CodePreview>
+
+<span id="props" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />
