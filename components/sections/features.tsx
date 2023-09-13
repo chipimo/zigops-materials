@@ -23,7 +23,7 @@ export default function SectionFeatures() {
     },
     {
       icon: "view_carousel",
-      title: "Templates (soon)",
+      title: "Coded sample",
       desc: "ZigOps Material will come with fully coded sample pages so you could start working instantly.",
     },
   ];
@@ -38,7 +38,7 @@ export default function SectionFeatures() {
           Tailwind CSS-Based Framework
         </Typography>
         <Typography className="mb-2 text-lg font-light text-[#1A237E]/60">
-          ZigOps Material features multiple React and HTML components, all
+          ZigOps Material features multiple React components, all
           written with Tailwind CSS classes and Material Design guidelines.
         </Typography>
       </div>

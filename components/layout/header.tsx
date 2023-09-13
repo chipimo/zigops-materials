@@ -42,14 +42,7 @@ export default function Header() {
                       <i className="fab fa-react" />
                       &nbsp;React
                     </Tab>
-                    <Tab
-                      value="html"
-                      className="p-0 font-normal text-[#1A237E]"
-                      onClick={() => setVersion("npm i @zigops-material/html")}
-                    >
-                      <i className="fab fa-html5" />
-                      &nbsp;HTML
-                    </Tab>
+                    
                   </TabsHeader>
                 </Tabs>
               </div>
@@ -72,20 +65,7 @@ export default function Header() {
                     Get Started
                   </Button>
                 </Link>
-                <div className="flex rounded-lg border border-white/80 bg-white/80 px-5 py-2.5 text-[#1A237E] shadow-2xl shadow-blue-gray-500/20 backdrop-blur-2xl backdrop-saturate-200">
-                  <CopyToClipboard text={version} onCopy={() => setCopied(true)}>
-                    <p className="mb-0 flex w-full items-center justify-between font-normal">
-                      {version}
-                      <Tooltip content={copied ? "Copied" : "Copy"} interactive={false}>
-                        <i
-                          className={`${
-                            copied ? "fas" : "far"
-                          } fa-copy ml-4 cursor-pointer text-sm`}
-                        />
-                      </Tooltip>
-                    </p>
-                  </CopyToClipboard>
-                </div>
+                
               </div>
             </div>
             <div className="hidden w-full max-w-full px-4 pt-24 md:w-7/12 md:pt-0 lg:block">

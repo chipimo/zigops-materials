@@ -59,7 +59,7 @@ export default function SectionColorsPalette() {
               <a
                 href="https://material.io/design/color/the-color-system.html#tools-for-picking-colors"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener"
               >
                 Material Design
               </a>

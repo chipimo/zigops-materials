@@ -12,5 +12,6 @@ module.exports = withZM({
   theme: {
     extend: {},
   },
+  darkMode: 'class',
   plugins: [],
 });

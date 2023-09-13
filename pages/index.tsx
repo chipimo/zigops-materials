@@ -52,10 +52,6 @@ export default function Presentation() {
             <SectionButton />
             <SectionColorsPalette />
             <SectionShadow />
-            <SectionComponents />
-            <SectionFramework />
-            <SectionTestimonials />
-            <SectionCommunity />
           </div>
           <img
             className="absolute bottom-0 w-full md:-bottom-40"

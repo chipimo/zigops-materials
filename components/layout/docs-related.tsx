@@ -30,7 +30,7 @@ export default function DocsRelated({ routes }: { routes: Props[] }) {
                 {title} 
               </Typography>
               <Typography variant="small" color="gray">
-                {description}
+                {description} 
               </Typography>
             </div>
           </Framework>
