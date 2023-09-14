@@ -21,7 +21,7 @@ export default function Header() {
   }, [copied]);
 
   return (
-    <div className="h-screen min-h-screen bg-[url('/img/bg-header.jpg')] bg-cover bg-center bg-no-repeat">
+    <div className="h-screen min-h-screen bg-[url('/img/bg-header.png')] bg-cover bg-center bg-no-repeat">
       <div className="relative z-50 h-fit py-20 lg:py-32">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap items-center justify-between">
@@ -42,7 +42,6 @@ export default function Header() {
                       <i className="fab fa-react" />
                       &nbsp;React
                     </Tab>
-                    
                   </TabsHeader>
                 </Tabs>
               </div>
@@ -54,18 +53,11 @@ export default function Header() {
                 Design.
               </Typography>
               <div className="flex flex-col-reverse gap-2 lg:flex-row">
-                <Link
-                  href={
-                    version === "npm i @zigops-material/react"
-                      ? "/docs/react/installation"
-                      : "/docs/html/installation"
-                  }
-                >
+                <Link href={"/docs/react/installation"}>
                   <Button variant="gradient" className="h-full w-full">
                     Get Started
                   </Button>
                 </Link>
-                
               </div>
             </div>
             <div className="hidden w-full max-w-full px-4 pt-24 md:w-7/12 md:pt-0 lg:block">
